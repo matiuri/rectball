@@ -111,7 +111,7 @@ public class GameScreen extends AbstractScreen {
         // Set up the score
         Texture numbers = game.manager.get("scores.png");
         score = buildScoreLabel();
-        score.setText(buildScore(valueScore, 6));
+        score.setText(buildScore(valueScore, 4));
         stage.addActor(score);
 
         // Set up the timer
@@ -217,11 +217,7 @@ public class GameScreen extends AbstractScreen {
 
     @Override
     public void render(float delta) {
-        if (game.settings.isColorblind()) {
-            Gdx.gl.glClearColor(0.3f, 0.6f, 0.8f, 1f);
-        } else {
-            Gdx.gl.glClearColor(0.8f, 0.5f, 0.6f, 1f);
-        }
+        Gdx.gl.glClearColor(0.5f, 0.6f, 0.6f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         // Cheto
